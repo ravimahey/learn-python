@@ -187,3 +187,99 @@ for i in arr:
         last = i
 
 print(last)
+
+# Find the max product of two number
+print("# Find the max product of two number")
+arr = [1,2,3,4,5,522,56,2,5,6]
+n = len(arr)
+max_prod=0
+for i in range(n):
+    for j in range(i+1,n):
+        max_prod = max(max_prod, arr[i]*arr[j])
+print(522*56)
+print(max_prod)
+
+# 2
+first=arr[0]
+second=arr[1]
+for i in arr:
+    if i < 0:
+        i = i*-1
+    if i > first:
+        second = first
+        first=i
+    elif i>second and i<first:
+        second = i
+
+print(first*second) 
+
+# 3
+arr.sort()
+print(max(arr[0]*arr[1],arr[n-1]*arr[n-2]))
+
+# Arrary elments represents as the number, Now perform addtion
+print("Arrary elments represents as the number, Now perform addtion")
+arr = [1,3,4,5,2,4,5,5,5,6,7,9]
+print(arr)
+
+n =len(arr) -1
+carry=30
+while n >0 and carry > 0:
+    total = arr[n] + carry
+    arr[n] = total % 10
+    carry= total//10
+    n=n-1
+
+print(arr)
+
+# sort array of 2,3,4
+
+print("# sort array of 2,3,4")
+arr=[4,4,4,4,3,3,3,3,2,2,4]
+n=len(arr)
+left=0
+right=n-1
+i=0
+while( i < right):
+    if arr[i] == 2:
+        arr[left], arr[i] = arr[i], arr[left]
+        left += 1
+        i += 1
+
+    elif arr[i] == 4:
+        arr[right], arr[i] = arr[i], arr[right]
+        right -= 1
+        # i NOT incremented here
+
+    else:  # arr[i] == 3
+        i += 1
+    
+print(arr)
+
+# Find Leader in the array (Largest form right side elements)
+print("# Find Leader in the array (Largest form right side elements)")
+arr=[3,5,6,7,4,6,5,3,1,2]
+n=len(arr)
+for i in range(n):
+    max_ele=arr[i]
+    for j in range(i+1,n):
+        max_ele=max(max_ele,arr[j])
+    if(max_ele==arr[i]):
+        print(arr[i],end=" ")
+
+print()
+# 2 
+arr=[3,5,6,7,4,6,5,3,1,2]
+n=len(arr)
+prefix=[0]*n
+prefix[n-1]=arr[n-1]
+for i in range(n-2,0,-1):
+    prefix[i]=max(arr[i],arr[i+1])
+for i in range(n):
+    if(arr[i]==prefix[i]):
+        print(arr[i],end=" ")
+    
+print()
+
+print(arr)
+print(prefix)
