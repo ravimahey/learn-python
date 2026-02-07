@@ -283,3 +283,21 @@ print()
 
 print(arr)
 print(prefix)
+
+# 3
+arr=[10,8,3,4,2]
+n=len(arr)
+max_ele = arr[n-1]
+for i in range(n-1,-1,-1):
+    if arr[i] >= max_ele:
+        max_ele = arr[i]
+        print(arr[i], end=" ")
+
+# Max Product of any three element
+# Approach 1 brute for with 3 loops
+# Sort the array 
+# Find one by one by the times loop
+# with if else
+
+
+
